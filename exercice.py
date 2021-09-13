@@ -3,23 +3,49 @@
 
 
 def is_even_len(string: str) -> bool:
-    return False
+    even_len=None
+    if len(string)%2==0:
+        even_len=True
+    else:
+        even_len=False
+    return even_len
 
 
 def remove_third_char(string: str) -> str:
-    return ""
+    string_without3=string[:2]+string[3:]
+    return string_without3
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    return ""
+    new_list=list(string)
+    verif_w=0
+    while verif_w<len(new_list):
+        if new_list[verif_w]=="w":
+            new_list[verif_w]="z"
+        else: 
+            verif_w+=1
+    creer_liste=0
+    new_string=""
+    while creer_liste<len(new_list):
+        new_string+=new_list[creer_liste]
+        creer_liste+=1
+    return new_string
 
 
 def get_nb_char(string: str, char: str) -> int:
-    return 0
+    nb_char=0
+    for letter in string:
+       if (letter==char):
+           nb_char+=1
+    return nb_char
 
 
 def get_nb_words(sentence: str) -> int:
-    return 0
+    nb_words=1
+    for letter in sentence:
+        if letter==" ":
+            nb_words+=1
+    return nb_words
 
 
 def main() -> None:
